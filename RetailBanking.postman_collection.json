@@ -1,0 +1,381 @@
+{
+	"info": {
+		"_postman_id": "177277e0-aae8-41ce-86ec-d5614b504204",
+		"name": "RetailBanking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33638660"
+	},
+	"item": [
+		{
+			"name": "AccountController",
+			"item": [
+				{
+					"name": "account/getAccount/{accountId}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8089/account/getAccount/1000000001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"account",
+								"getAccount",
+								"1000000001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "account/createAccount/{customerId}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customerId\": \"CUSTOMER101\",\r\n  \"currentBalance\": 180000.0,\r\n  \"accountType\": \"Savings\",\r\n  \"openingDate\": \"2024-03-08T00:00:00\",\r\n  \"ownerName\": \"Kamil\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/account/createAccount/CUSTOMER101",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"account",
+								"createAccount",
+								"CUSTOMER101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "account/getAccounts/{customerId}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8089/account/getAccounts/CUSTOMER101",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"account",
+								"getAccounts",
+								"CUSTOMER101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "account/deposit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountId\": \"1000000001\",\r\n  \"amount\": 1500.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/account/deposit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"account",
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "account/withdraw",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountId\": \"1000000001\",\r\n  \"amount\": 500.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/account/withdraw",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"account",
+								"withdraw"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "account/checkBalance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountId\": \"1000000001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/account/checkBalance",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"account",
+								"checkBalance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "account/deleteCustomer/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8089/account/deleteCustomer/CUSTOMER101",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"account",
+								"deleteCustomer",
+								"CUSTOMER101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "account/getAccountStatement/{accountId}/{from}/{to}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8089/account/getAccountStatement/1000000001/2024-03-02/2024-03-15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"account",
+								"getAccountStatement",
+								"1000000001",
+								"2024-03-02",
+								"2024-03-15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "account/transfer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\": 500,\r\n  \"sourceAccount\": {\r\n    \"accountId\": 1000000001,\r\n    \"amount\": 500\r\n  },\r\n  \"targetAccount\": {\r\n    \"accountId\": 1000000002,\r\n    \"amount\": 500\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/account/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"account",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CustomerController",
+			"item": [
+				{
+					"name": "customer/createCustomerWithAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accounts\": [\r\n    {\r\n      \"customerId\": \"CUSTOMER103\",\r\n      \"currentBalance\": 180000,\r\n      \"accountType\": \"Savings\",\r\n      \"openingDate\": \"2024-03-08T00:00:00\",\r\n      \"ownerName\": \"Arshiyan\"\r\n    }\r\n  ],\r\n  \"address\": \"Delhi\",\r\n  \"dateOfBirth\": \"2002-08-05\",\r\n  \"pan\": \"ABCDE1234A\",\r\n  \"password\": \"arshiyan\",\r\n  \"userid\": \"CUSTOMER103\",\r\n  \"username\": \"Arshiyan\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/customer/createCustomerWithAccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"customer",
+								"createCustomerWithAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customer/createCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"address\": \"Delhi\",\r\n  \"dateOfBirth\": \"2000-05-16\",\r\n  \"pan\": \"ABCDE1234A\",\r\n  \"password\": \"sadaf\",\r\n  \"userid\": \"CUSTOMER104\",\r\n  \"username\": \"Sadaf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/customer/createCustomer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"customer",
+								"createCustomer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customer/updateCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"address\": \"Mumbai\",\r\n  \"dateOfBirth\": \"2000-05-16\",\r\n  \"pan\": \"ABCDE1234A\",\r\n  \"password\": \"sadaf\",\r\n  \"userid\": \"CUSTOMER104\",\r\n  \"username\": \"Sadaf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/customer/updateCustomer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"customer",
+								"updateCustomer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customer/getCustomerDetails/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8089/customer/getCustomerDetails/CUSTOMER101",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"customer",
+								"getCustomerDetails",
+								"CUSTOMER101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customer/deleteCustomer/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8089/customer/deleteCustomer/CUSTOMER104",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"customer",
+								"deleteCustomer",
+								"CUSTOMER104"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
